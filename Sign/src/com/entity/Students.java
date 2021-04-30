@@ -8,11 +8,12 @@ public class Students {
 	private int sex;
 	private String clas;
 	private int role;
+	private String ip;
 	private String rname;
 	
 	public Students() {}
 	
-	public Students(int id,String name,String logname,String signTime,int sex,String clas,int role) {
+	public Students(int id,String name,String logname,String signTime,int sex,String clas,int role,String ip) {
 		this.id=id;
 		this.name=name;
 		this.logname=logname;
@@ -20,9 +21,10 @@ public class Students {
 		this.sex=sex;
 		this.clas=clas;
 		this.role=role;
+		this.ip=ip;
 	}
 	
-	public Students(int id,String name,String logname,String signTime,int sex,String clas,String rname) {
+	public Students(int id,String name,String logname,String signTime,int sex,String clas,String rname,String ip) {
 		this.id=id;
 		this.name=name;
 		this.logname=logname;
@@ -30,9 +32,18 @@ public class Students {
 		this.sex=sex;
 		this.clas=clas;
 		this.rname=rname;
+		this.ip=ip;
 	}
 
 	
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
 	public String getRname() {
 		return rname;
 	}

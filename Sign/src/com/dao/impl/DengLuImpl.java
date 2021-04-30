@@ -947,7 +947,7 @@ public class DengLuImpl extends BaseDao implements DengLu {
 		List<Students> list = null;
 		ResultSet rs = null;
 		PreparedStatement ps=null;
-		String sql="SELECT stu.id,stu.name,stu.logname,stu.signTime,stu.sex,stu.clas,lr.rname FROM students AS stu,`ls_role` AS lr  WHERE stu.role=lr.id";	
+		String sql="SELECT stu.id,stu.name,stu.logname,stu.signTime,stu.sex,stu.clas,lr.rname,ip FROM students AS stu,`ls_role` AS lr  WHERE stu.role=lr.id";	
 		try {
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
@@ -961,7 +961,8 @@ public class DengLuImpl extends BaseDao implements DengLu {
 					int sex= rs.getInt("sex");
 					String clas= rs.getString("clas");
 					String rname= rs.getString("rname");
-					list.add(new Students(id, name, logname, signTime, sex, clas,rname));
+					String ip= rs.getString("ip");
+					list.add(new Students(id, name, logname, signTime, sex, clas,rname,ip));
 				}
 			}
 		} catch (Exception e) {
@@ -981,7 +982,7 @@ public class DengLuImpl extends BaseDao implements DengLu {
 		List<Students> list = null;
 		ResultSet rs = null;
 		PreparedStatement ps=null;
-		String sql="SELECT stu.id,stu.name,stu.logname,stu.signTime,stu.sex,stu.clas,lr.rname FROM students AS stu,`ls_role` AS lr  WHERE stu.role=lr.id and logname='"+lognames+"'";	
+		String sql="SELECT stu.id,stu.name,stu.logname,stu.signTime,stu.sex,stu.clas,lr.rname,ip FROM students AS stu,`ls_role` AS lr  WHERE stu.role=lr.id and logname='"+lognames+"'";	
 		try {
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
@@ -995,7 +996,8 @@ public class DengLuImpl extends BaseDao implements DengLu {
 					int sex= rs.getInt("sex");
 					String clas= rs.getString("clas");
 					String rname= rs.getString("rname");
-					list.add(new Students(id, name, logname, signTime, sex, clas,rname));
+					String ip= rs.getString("ip");
+					list.add(new Students(id, name, logname, signTime, sex, clas,rname,ip));
 				}
 			}
 		} catch (Exception e) {
@@ -1015,7 +1017,7 @@ public class DengLuImpl extends BaseDao implements DengLu {
 		List<Students> list = null;
 		ResultSet rs = null;
 		PreparedStatement ps=null;
-		String sql="SELECT stu.id,stu.name,stu.logname,stu.signTime,stu.sex,stu.clas,lr.rname FROM students AS stu,`ls_role` AS lr  WHERE stu.role=lr.id and clas='"+clasb+"'";	
+		String sql="SELECT stu.id,stu.name,stu.logname,stu.signTime,stu.sex,stu.clas,lr.rname,ip FROM students AS stu,`ls_role` AS lr  WHERE stu.role=lr.id and clas='"+clasb+"'";	
 		try {
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
@@ -1029,7 +1031,8 @@ public class DengLuImpl extends BaseDao implements DengLu {
 					int sex= rs.getInt("sex");
 					String clas= rs.getString("clas");
 					String rname= rs.getString("rname");
-					list.add(new Students(id, name, logname, signTime, sex, clas,rname));
+					String ip= rs.getString("ip");
+					list.add(new Students(id, name, logname, signTime, sex, clas,rname,ip));
 				}
 			}
 		} catch (Exception e) {
@@ -1076,8 +1079,8 @@ public class DengLuImpl extends BaseDao implements DengLu {
 	}
 	@Override
 	public int insqd(Students stu) {
-		String sql="INSERT INTO `students`(name,`logname`,`signTime`,`sex`,clas,role) VALUES(?,?,?,?,?,?)";
-		int num=executeUpdate(sql,stu.getName(),stu.getLogname(),stu.getSignTime(),stu.getSex(),stu.getClas(),stu.getRole());
+		String sql="INSERT INTO `students`(name,`logname`,`signTime`,`sex`,clas,role,ip) VALUES(?,?,?,?,?,?,?)";
+		int num=executeUpdate(sql,stu.getName(),stu.getLogname(),stu.getSignTime(),stu.getSex(),stu.getClas(),stu.getRole(),stu.getIp());
 		return num;
 	}
 	@Override

@@ -18,13 +18,58 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link rel="stylesheet" href="js/css/layui.css">
+   <link rel="stylesheet" href="js/css/denglu.css">
+   <style type="text/css">
+              
+   body{
+	margin:0;
+	padding:0;
+    background:url("images/beij.jpg") no-repeat 0 0;
+	background-size:cover;
+	position:absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+
+	}
+   
+   </style>
   </head>
   
   <body>
-   <form action="DlS" method="post" >
-  		账号<input type="text" name="name"/>
-    	密码<input type="text" name="pwd"/>
-    	<input type="submit" value="登录"/>
+    <form class="layui-form" action="DlS" method="post">
+    <div class="container">
+              <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                  <input type="text" name="name" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">密 &nbsp;&nbsp;码</label>
+                <div class="layui-input-inline">
+                  <input type="password" name="pwd" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
+              </div>
+
+
+ 
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button class="layui-btn" lay-submit lay-filter="formDemo">登陆</button>         
+                </div>
+              </div>
+
+            </div>
   </form>
     	
   </body>

@@ -49,6 +49,8 @@ public class QDS extends AbstractServlet {
 		request.setCharacterEncoding("utf-8");	
 		
 		int uid=Integer.parseInt(request.getParameter("uid"));
+		String ip=request.getParameter("ip");
+		//System.out.println(ip);
 		DengLuService dl=new DLServiceImpl();
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 		SimpleDateFormat time = new SimpleDateFormat("yyyy-MM-dd");
@@ -57,18 +59,24 @@ public class QDS extends AbstractServlet {
 		int tjia=0;
 
 		if(num!=1) {
-			Students stu=new Students();
+			if(!ip.equals("114.107.28.189")) {
+				return 3;
+			}else {
+				Students stu=new Students();
+				
+				stu.setName(eu.getUserName());
+				stu.setLogname(eu.getLoginName());
+				
+				stu.setSignTime(df.format(new Date()));// new Date()为获取当前系统时间
+				stu.setSex(eu.getSex());
+				stu.setClas(eu.getClas());
+				stu.setRole(eu.getRole());
+				stu.setIp(ip);
+				tjia=dl.insqd(stu);
+			}
 			
-			stu.setName(eu.getUserName());
-			stu.setLogname(eu.getLoginName());
-			
-			stu.setSignTime(df.format(new Date()));// new Date()为获取当前系统时间
-			stu.setSex(eu.getSex());
-			stu.setClas(eu.getClas());
-			stu.setRole(eu.getRole());
-			tjia=dl.insqd(stu);
-
 		}
+		
 		
 		return tjia;
 			}

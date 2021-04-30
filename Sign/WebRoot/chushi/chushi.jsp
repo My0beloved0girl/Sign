@@ -27,6 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="js/lay-module/layui_ext/dtree/dtree.css">
     <link rel="stylesheet" href="js/lay-module/layui_ext/dtree/font/dtreefont.css">
     <link rel="stylesheet" href="js/css/shu/demo/css/treeTable.css">
+    <!-- <link rel="stylesheet" href="js/laydate/theme/default/font/laydate.css"> -->
 <!--     <style>
         .layui-btn:not(.layui-btn-lg ):not(.layui-btn-sm):not(.layui-btn-xs) {
             height: 34px;
@@ -103,10 +104,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  <ul id="database" class="dtree" data-id="0"></ul>
 	</div>
     <script type="text/javascript" src="js/layui.all.js"></script>
+     <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>  
 <!--     <script type="text/javascript" src="../lay/treeTable.js"></script> -->
 <!--     <script type="text/javascript" src="js/lay/modules/treeTable.js"></script> -->
 <!-- <script type="text/javascript" src="js/lay/modules/layer.js"></script> -->
 <script type="text/javascript" src="js/lay/modules/jquery-1.12.4.js"></script>
+<!-- <script type="text/javascript" src="js/laydate/laydate.js"></script> -->
 <script type="text/javascript" src="js/zxjs/ZxCb.js"></script>
 
   

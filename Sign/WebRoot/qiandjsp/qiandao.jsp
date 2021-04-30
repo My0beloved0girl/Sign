@@ -53,12 +53,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	
 
-<!-- 	<div class="layui-inline">
+	<!-- <div class="layui-inline">
 	 <label class="layui-form-label">日期时间选择器</label>
 	      <div class="layui-input-inline">
 	        <input type="text" class="layui-input" id="test5" placeholder="yyyy-MM-dd HH:mm:ss">
 	      </div>
-    </div> -->
+    </div>
+   <div class="site-demo-laydate">
+  <div class="layui-inline" id="test-n1"></div>
+
+</div> -->
 
 		
 		<div class="layui-btn-container" id="toolbarDemo">

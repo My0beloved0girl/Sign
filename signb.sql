@@ -111,12 +111,13 @@ CREATE TABLE `students` (
   `sex` int(11) NOT NULL,
   `clas` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `role` int(11) NOT NULL,
+  `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `students` */
 
-insert  into `students`(`id`,`name`,`logname`,`signTime`,`sex`,`clas`,`role`) values (1,'王五','wangwu','2021-4-28',1,'96',3),(2,'李四','lisi','2021-8-9',1,'96',3),(17,'李庆磊','lql','2021-04-29 15:23:19',1,'97',3),(18,'系统管理员','admin','2021-04-29 15:57:11',1,'',1),(19,'系统管理员','admin','2021-04-30 08:38:45',1,'',1),(20,'李庆磊','lql','2021-04-30 08:39:03',1,'96',3);
+insert  into `students`(`id`,`name`,`logname`,`signTime`,`sex`,`clas`,`role`,`ip`) values (1,'王五','wangwu','2021-4-28',1,'96',3,'117.136.117.205'),(2,'李四','lisi','2021-8-9',1,'96',3,'117.136.117.205'),(17,'李庆磊','lql','2021-04-29 15:23:19',1,'97',3,'117.136.117.205'),(18,'系统管理员','admin','2021-04-29 15:57:11',1,'',1,'117.136.117.205'),(19,'系统管理员','admin','2021-04-30 08:38:45',1,'',1,'117.136.117.205'),(20,'李庆磊','lql','2021-04-30 08:39:03',1,'96',3,'117.136.117.205'),(21,'程广','cgn','2021-04-30 09:24:53',1,'97',2,'117.136.117.205'),(22,'沈白','sb','2021-04-30 10:58:51',1,'97',3,'114.107.28.189');
 
 /*Table structure for table `user_menu` */
 

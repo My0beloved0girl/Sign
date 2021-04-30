@@ -25,14 +25,10 @@ uid=$(".uid").val();
             }},
             {field: 'clas', title: '班级', align:'center'},
             {field: 'rname', title: '角色', align:'center'},
+            {field: 'ip', title: 'ip', align:'center'}
         ]]
     });
     
-/*  //日期时间选择器
-    laydate.render({
-      elem: '#test5'
-      ,type: 'datetime'
-    });*/
     
     
     table.on('toolbar(newsList)', function(obj){
@@ -51,12 +47,13 @@ uid=$(".uid").val();
 	    };
 	  });
   
-    
+   
     //签到
     function addUser(){
+    	 var ip = window.returnCitySN.cip	
     	$.ajax({
     		url:"QDS?action=insqd",
-    		data:{"uid":uid},
+    		data:{"uid":uid,"ip":ip},
     		type:"post",
     		success:function(data){
     			if(data == 1){
@@ -65,8 +62,10 @@ uid=$(".uid").val();
 			            //刷新父页面
 			            parent.location.reload();
 		        	},1000);
-    			}else{
+    			}else if(data==0){
     				layer.msg("亲,您今天已经签到过了哦")
+    			}else if(data==3){
+    				layer.msg("亲,您不在班级,无法签到哦,快前往教室吧")
     			}
     		}
     	})
